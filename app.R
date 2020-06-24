@@ -16,18 +16,29 @@ ui <- fluidPage(
                                        "Percent Hispanic", 
                                        "Percent Asian")),
             
-            sliderInput("slider", 
+            sliderInput("range", 
                         label = "Range of interest:", 
-                        min = 0, 
-                        max = 100, 
+                        min = 0, max = 100, 
                         value = c(0, 100))),
         
-        mainPanel())
+        mainPanel(
+            textOutput("selected_var"),
+            textOutput("min_max")
+        ))
 )
 
 # Define server logic ----
 server <- function(input, output) {
     
+    output$selected_var <- renderText({
+        paste("You have selected", 
+              input$percent_ethnicity)
+    })
+    
+    output$min_max <- renderText({
+        paste("You have chosen a range that goes from", 
+              input$range[1], "to", input$range[2])
+    })
 }
 
 # Run the app ----
