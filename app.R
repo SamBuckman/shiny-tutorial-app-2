@@ -26,7 +26,7 @@ ui <- fluidPage(
             textOutput("min_max")
         ))
 )
-
+# test
 # Define server logic ----
 server <- function(input, output) {
     
