@@ -1,6 +1,5 @@
 library(shiny)
-# new change
-# 1
+
 # Define UI ----
 ui <- fluidPage(
     
