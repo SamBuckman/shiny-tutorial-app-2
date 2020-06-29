@@ -1,8 +1,12 @@
+# Load packages ----
 library(shiny)
-# Load data, script, libraries.
 library(maps)
 library(mapproj)
+
+# Load script ----
 source("helpers.R")
+
+# Load data ----
 counties <- readRDS("data/counties.rds")
 
 # Define UI ----
